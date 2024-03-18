@@ -1,0 +1,49 @@
+.invisibleBox{
+    -fx-background-color: transparent;
+}
+
+.topBar{
+    -fx-background-radius: 25 25 0 0;
+    -fx-background-color: #480b12;
+}
+
+.background{
+    -fx-background-color: #05263b;
+
+}
+
+
+.closeButton{
+    -fx-background-color: #7c0606;
+}
+
+.closeButton:hover{
+    -fx-background-color: #000000;
+}
+.chart .chart-axis-label.x-axis-label {
+    -fx-font-size: 5px !important;
+}
+
+/* Style for all labels on y-axes */
+.chart .chart-axis-label.y-axis-label {
+    -fx-font-size: 5px !important;
+}
+
+
+.chart{
+    -fx-background-color: #05263b;
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+    -fx-legend-visible: false;
+    -fx-grid-lines-visible: true;
+    -fx-animated: false !important;
+}
+
+.axis-label {
+    -fx-text-fill: #ffffff;
+}
+
+.chart-plot-background {
+    -fx-background-color:transparent;
+}
+

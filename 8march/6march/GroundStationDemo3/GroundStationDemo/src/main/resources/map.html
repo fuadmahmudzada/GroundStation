@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Maps Example</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDam8IqMdz2D-9jGkp-u3LFQulKgAECh_4&callback=initMap"></script>
+    <script>
+        let map;
+        let marker;
+
+        function initMap() {
+            const mapOptions = {
+                zoom: 8,
+                center: { lat: 37.7749, lng: -122.4194 } // Example
+            };
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        }
+
+        function updateMarkerPosition(lat, lng) {
+            const newPosition = { lat: lat, lng: lng };
+
+            // Create a custom marker icon
+            const customMarkerIcon = {
+                url: 'satellite.png', // Replace with the name of your custom icon file
+                scaledSize: new google.maps.Size(32, 32), // Adjust the size as needed
+                origin: new google.maps.Point(0, 0), // Adjust the origin point if needed
+                anchor: new google.maps.Point(16, 32) // Adjust the anchor point if needed
+            };
+
+            if (marker) {
+                marker.setPosition(newPosition);
+                marker.setIcon(customMarkerIcon); // Set the custom icon for the existing marker
+            } else {
+                marker = new google.maps.Marker({
+                    position: newPosition,
+                    map: map,
+                    title: 'Current Position',
+                    icon: customMarkerIcon // Set the custom icon for the new marker
+                });
+            }
+        }
+    </script>
+</head>
+<body onload="initMap()">
+<div id="map" style="height: 500px; width: 100%;"></div>
+</body>
+
+</html>
